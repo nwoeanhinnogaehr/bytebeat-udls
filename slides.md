@@ -194,6 +194,9 @@ So XOR preserves entropy while AND and OR reduce it, biasing towards either 0 or
 - [pytebeat](https://github.com/kragen/pytebeat)
 - [battle of the bits](http://battleofthebits.org/lyceum/View/bytebeat+%28format%29)
 
+# Slide repo
+![](frame.png)
+
 # Extras
 
 https://greggman.com/downloads/examples/html5bytebeat/html5bytebeat.html#t=0&e=0&s=32000&bb=5d000001001b0000000000000000141d01f00425d021087b406c8fc1583215ef67aaf4dbfb98cf515fff390c0000
