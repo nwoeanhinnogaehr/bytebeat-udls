@@ -32,6 +32,15 @@
 # The 2nd iteration
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qlrs2Vorw2Y?start=69" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+# IBNIZ
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aKMrBaXJvMs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+# Byte?
+- The original bytebeat was written to the audio device using `putchar`, thus there is an implicit `&255` which truncates the output to a byte.
+- This is why the formula `f(t)=t` produces a sawtooth wave with period 256.
+- ## "Floatbeat?"
+Same general idea but the output is a float in $[-1,1]$.
+
 # Why would anyone do this?
 To answer this question, we need to dive into the history of computer art...
 
@@ -125,19 +134,65 @@ while True:
 - Explore/understand how to effectively use feedback
 - Apply bytebeat patterns to different musical parameters
 
-# Some theory
+# Theory
+- Often gaining intuition about the whole formula is challenging.
+- I like to look at bytebeat composition under the lens of local entropy:
+- Consider the arguments to an operator to be random variables and think about the distribution of the output.
+
+# Theory
+Let $X_1,X_2$ be uniformly sampled from $\{0,1\}$. Then
+$$\Pr[X_1 \text{ xor } X_2 = 1]=1/2$$
+$$\Pr[X_1 \text{ or } X_2 = 1]=3/4$$
+$$\Pr[X_1 \text{ and } X_2 = 1]=1/4$$
+So XOR preserves entropy while AND and OR reduce it, biasing towards either 0 or 1.
+
+# Theory
+- Addition and subtraction even further increase entropy due to carries between bits
+- Division by some constant increases/decreases entropy depending on common factors
+- Multiplication generally increases entropy
+
+# Theory
+- Output is "too noisy" -> change operators to reduce entropy or remove subexpressions
+- Output is "too plain" -> change operators to increase entropy or add subexpressions
+
+# Composition tips
+- Most importantly, **experiment and build intuition**
+- Try crazy things
+
+# Common gotchas
+- Operator precedence
+- Division by zero
+- Shifting by more bits than the type
+- Language automatically converting things to float
+
+# Representability
+- We can clearly represent any music as a function: just index into a big array
+- So in some sense what characterizes bytebeat is very high computational compressibility
+
+# ![](kol.png)
+
+# Catchiness
+- One factor of how catchy music is is how easily the brain is able to learn and represent it
+- Bytebeats are represented by very simple formulas
+- Therefore bytebeats are catchy music
+- Good music is catchy
+- And also all good music is bytebeat
+
+# Overzealous generalization
+- Everything that people like is highly computationally compressible
+- There are small math formulas for all interesting art
 
 # Resources
-[The original pouet thread](https://www.pouet.net/topic.php?which=8357&page=1)
-Various online tools
-IBNIZ
-bytebeat in hardware
-bytebeat papers
-tinyspec
-http://wavepot.com/
-rampcode
-pytebeat
-battle of the bits
+- [The original pouet thread](https://www.pouet.net/topic.php?which=8357&page=1)
+- [html5bytebeat](https://greggman.com/downloads/examples/html5bytebeat)
+- [IBNIZ](http://pelulamu.net/ibniz/)
+- [bytebeat in hardware](https://github.com/kragen/ar_bytebeat)
+- [libglitch](https://github.com/erlehmann/libglitch)
+- [bytebeat papers](http://viznut.fi/texts-en/bytebeat_exploring_space.pdf)
+- [tinyspec](https://github.com/nwoeanhinnogaehr/tinyspec)
+- [wavepot](http://wavepot.com/)
+- [pytebeat](https://github.com/kragen/pytebeat)
+- [battle of the bits](http://battleofthebits.org/lyceum/View/bytebeat+%28format%29)
 
 # Extras
 
