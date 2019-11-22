@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Noah Weninger">
+  <meta name="dcterms.date" content="2019-10-25">
+  <title>Bytebeats</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reset.css">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Bytebeats</h1>
+  <p class="author">Noah Weninger</p>
+  <p class="date">October 25, 2019</p>
+</section>
+
+<section id="music" class="slide level1">
+<h1>Music</h1>
+<ul>
+<li class="fragment">Number theory shows up everywhere in music:</li>
+<li class="fragment">Time signatures</li>
+<li class="fragment">Scales</li>
+<li class="fragment">Frequency relationships</li>
+<li class="fragment">Consonance/dissonance</li>
+<li class="fragment"><strong>How deep does it go?</strong></li>
+</ul>
+</section>
+<section id="digital-sound" class="slide level1">
+<h1>Digital sound</h1>
+<ul>
+<li class="fragment"><span class="math inline">\(f:\mathbb{Z}\to\mathbb{Z}\)</span> where <span class="math inline">\(|f(t)|\le b\)</span></li>
+<li class="fragment"><img data-src="sound.png" title="fig:" alt="picture of spaghetti" /></li>
+</ul>
+</section>
+<section id="digital-music" class="slide level1">
+<h1>Digital music</h1>
+<ul>
+<li class="fragment">Digital sound, but more… periodic</li>
+<li class="fragment"><img data-src="music.png" title="fig:" alt="the sound of music" /></li>
+</ul>
+</section>
+<section id="more-digital-music" class="slide level1">
+<h1>More digital music</h1>
+<ul>
+<li class="fragment"><img data-src="function.png" title="fig:" alt="the sound of bits" /></li>
+<li class="fragment"><code>f(t)=(t^t/4^t/32)&amp;31</code></li>
+</ul>
+</section>
+<section id="wat" class="slide level1">
+<h1>Wat</h1>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GtQdIYUtAHg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</section>
+<section id="the-2nd-iteration" class="slide level1">
+<h1>The 2nd iteration</h1>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qlrs2Vorw2Y?start=69" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</section>
+<section id="ibniz" class="slide level1">
+<h1>IBNIZ</h1>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aKMrBaXJvMs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</section>
+<section id="byte" class="slide level1">
+<h1>Byte?</h1>
+<ul>
+<li class="fragment">The original bytebeat was written to the audio device using <code>putchar</code>, thus there is an implicit <code>&amp;255</code> which truncates the output to a byte.</li>
+<li class="fragment">This is why the formula <code>f(t)=t</code> produces a sawtooth wave with period 256.</li>
+<li class="fragment"><h2 id="floatbeat">“Floatbeat?”</h2>
+Same general idea but the output is a float in <span class="math inline">\([-1,1]\)</span>.</li>
+</ul>
+</section>
+<section id="why-would-anyone-do-this" class="slide level1">
+<h1>Why would anyone do this?</h1>
+<p>To answer this question, we need to dive into the history of computer art…</p>
+</section>
+<section id="section" class="slide level1">
+<h1><img data-src="pouet.logo.04_by_devian.png" /> <img data-src="pouet_by_slizgi.gif" /></h1>
+<p><img data-src="fidonico.gif" /> <img data-src="checkoff.png" /> <img data-src="luis_pouet_slum.gif" /> <img data-src="mrwb_pouet_logo_pig.gif" /></p>
+</section>
+<section id="section-1" class="slide level1">
+<h1><img data-src="demo_mekka.jpg" /></h1>
+</section>
+<section id="section-2" class="slide level1">
+<h1><img data-src="9.jpg" /></h1>
+</section>
+<section id="the-backstory" class="slide level1">
+<h1>The backstory</h1>
+<p>“It all started a couple of months ago, when I encountered a 23-byte C-64 demo, <a href="https://www.youtube.com/watch?v=7lcQ-HDepqk">Wallflower</a> by 4mat of Ate Bit, that was like nothing I had ever seen on that size class on any platform. Glitchy, yes, but it had a musical structure that vastly outgrew its size. I started to experiment on my own and came up with a 16-byte VIC-20 program whose musical output totally blew my mind.” - <a href="http://viznut.fi/texts-en/bytebeat_algorithmic_symphonies.html">Viznut 2011</a></p>
+</section>
+<section id="section-3" class="slide level1">
+<h1><img data-src="cd.png" /></h1>
+</section>
+<section id="more-examples-an-online-editor" class="slide level1">
+<h1>More examples / an online editor</h1>
+<p><a href="https://greggman.com/downloads/examples/html5bytebeat/html5bytebeat.html#t=0&amp;e=0&amp;s=8000&amp;bb=5d000001001200000000000000003a09410781d076a6638d274fcd4cd401334c6be13efffb20f000"><code>t%(t/(t&gt;&gt;9|t&gt;&gt;13))</code></a></p>
+<p><a href="https://greggman.com/downloads/examples/html5bytebeat/html5bytebeat.html#t=0&amp;e=0&amp;s=8000&amp;bb=5d000001002800000000000000003a09410781d076a6638d274fcd4cd401334c232c9e6d4ee2f641bb2b3aca9700a0fff33a0c00"><code>t%(t/(t&gt;&gt;9|t&gt;&gt;13))|t*((t&gt;&gt;9|t&gt;&gt;13)%16)/8</code></a></p>
+<p><a href="https://greggman.com/downloads/examples/html5bytebeat/html5bytebeat.html#t=0&amp;e=0&amp;s=44100&amp;bb=5d000001001e00000000000000001461cc5e31197925169763d83a2fc92836b2f4fbee7b3baf844f91a0b3fffff93e0000"><code>((t/128)/((t/2)%(t/77&amp;t&gt;&gt;14)))</code></a></p>
+<p><a href="https://greggman.com/downloads/examples/html5bytebeat/html5bytebeat.html#t=0&amp;e=0&amp;s=8000&amp;bb=5d000001001f00000000000000003a0941078359e492525d097a3ec17e1c55db099625ba53ae9857f0132660b8ffffb0b68000"><code>t%(t^t/(t&amp;t/(32&lt;&lt;(t&gt;&gt;14&amp;7))))-t</code></a></p>
+</section>
+<section id="critique" class="slide level1">
+<h1>Critique</h1>
+<ul>
+<li class="fragment">Okay, so this similarity between sound waves and bitwise functions is weird &amp; cool… but lots of people don’t like the music it produces.</li>
+<li class="fragment">It actually causes some people to feel panicked and on high alert</li>
+<li class="fragment">Recall the pervasiveness of number theory in music: <strong>Can we use the same functions in a different way?</strong></li>
+</ul>
+</section>
+<section id="more-abstraction" class="slide level1">
+<h1>More abstraction</h1>
+<ul>
+<li class="fragment">We’ve been looking at writing out sound waves directly from our bytebeats</li>
+<li class="fragment">But when a composer writes a song, they don’t draw waveforms by hand.</li>
+<li class="fragment">What if we write a MIDI file where the notes are decided by a bytebeat?</li>
+</ul>
+</section>
+<section id="midi-bytebeat" class="slide level1">
+<h1>MIDI bytebeat</h1>
+<p>1 hour later… <audio controls><source src="out43.flac" type="audio/flac"></audio></p>
+<pre><code>if t%64==0:
+    s=(s&gt;&gt;9)|((s&amp;((1&lt;&lt;11)-1))&lt;&lt;3)
+play(0,0,toscale(s,(t//2&amp;t//5|t//8&amp;t//16)%36+60),t/8,1/8,127)
+play(1,1,toscale(s,(t//5|t//8|t//16)%12+36),t/8,1/8,127)</code></pre>
+<p>(full code in <a href="https://github.com/nwoeanhinnogaehr/bytebeat-udls">the repo</a>)</p>
+</section>
+<section id="spectral-bytebeat" class="slide level1">
+<h1>Spectral bytebeat</h1>
+<ul>
+<li class="fragment">Generating waveforms directly gives very “bleepy” output.</li>
+<li class="fragment">How about using bytebeats to control the parameters of a synth?</li>
+<li class="fragment">The “synth” of choice… <strong>fast fourier transform</strong></li>
+</ul>
+</section>
+<section id="spectral-bytebeat-1" class="slide level1">
+<h1>Spectral bytebeat</h1>
+<audio controls>
+<source src="knead03.mp3" type="audio/mp3">
+</audio>
+<pre><code>int feed[2][fft_size];
+void fill(cplx *buf[2], int n, double t) {
+    for (int c = 0; c &lt; 2; c++) {
+        for (int i = 1; i &lt; n; i++) {
+            int r = (int)(t*12)*n/2+i+feed[c][i];
+            feed[c][i] += r/16^r/63^r/1023^c;
+            if (int mod = (r/16^r/65^r/1024))
+                feed[c][i] %= mod;
+            buf[c][i] = (exp(cplx(0.0,M_PI*
+                sin(M_PI*feed[c][i]/double(n-i)))))
+                /pow(i+1, 1.0)/2.0;
+} } }</code></pre>
+<p>See <a href="https://github.com/nwoeanhinnogaehr/tinyspec">tinyspec</a></p>
+</section>
+<section id="making-beats" class="slide level1">
+<h1>Making beats</h1>
+<audio controls>
+<source src="drumbeat01.flac" type="audio/flac">
+</audio>
+<pre><code>i = 0
+while True:
+    t = i%16 + i//64*16
+    x = t^t&gt;&gt;1^t&gt;&gt;2
+    y = x%(len(msgs)+1)
+    if y != 0:
+        osc_send(msgs[y-1], tag)
+    time.sleep(1/8)
+    osc_process()
+    i += 1</code></pre>
+<p>(full code in <a href="https://github.com/nwoeanhinnogaehr/bytebeat-udls">the repo</a>)</p>
+</section>
+<section id="future-bytebeat" class="slide level1">
+<h1>Future “bytebeat”</h1>
+<ul>
+<li class="fragment">Get a live band to perform a bytebeat track</li>
+<li class="fragment">Generating images/videos by feeding bytebeats into 2D/3D IFFT</li>
+<li class="fragment">Search for a function representing a well known melody/beat as a complexity measure and to find similar melodies/beats</li>
+<li class="fragment">Explore/understand how to effectively use feedback</li>
+<li class="fragment">Apply bytebeat patterns to different musical parameters</li>
+</ul>
+</section>
+<section id="theory" class="slide level1">
+<h1>Theory</h1>
+<ul>
+<li class="fragment">Often gaining intuition about the whole formula is challenging.</li>
+<li class="fragment">I like to look at bytebeat composition under the lens of local entropy:</li>
+<li class="fragment">Consider the arguments to an operator to be random variables and think about the distribution of the output.</li>
+</ul>
+</section>
+<section id="theory-1" class="slide level1">
+<h1>Theory</h1>
+<p>Let <span class="math inline">\(X_1,X_2\)</span> be uniformly sampled from <span class="math inline">\(\{0,1\}\)</span>. Then <span class="math display">\[\Pr[X_1 \text{ xor } X_2 = 1]=1/2\]</span> <span class="math display">\[\Pr[X_1 \text{ or } X_2 = 1]=3/4\]</span> <span class="math display">\[\Pr[X_1 \text{ and } X_2 = 1]=1/4\]</span> So XOR preserves entropy while AND and OR reduce it, biasing towards either 0 or 1.</p>
+</section>
+<section id="theory-2" class="slide level1">
+<h1>Theory</h1>
+<ul>
+<li class="fragment">Addition and subtraction even further increase entropy due to carries between bits</li>
+<li class="fragment">Division by some constant increases/decreases entropy depending on common factors</li>
+<li class="fragment">Multiplication generally increases entropy</li>
+</ul>
+</section>
+<section id="theory-3" class="slide level1">
+<h1>Theory</h1>
+<ul>
+<li class="fragment">Output is “too noisy” -&gt; change operators to reduce entropy or remove subexpressions</li>
+<li class="fragment">Output is “too plain” -&gt; change operators to increase entropy or add subexpressions</li>
+</ul>
+</section>
+<section id="composition-tips" class="slide level1">
+<h1>Composition tips</h1>
+<ul>
+<li class="fragment">Most importantly, <strong>experiment and build intuition</strong></li>
+<li class="fragment">Try crazy things</li>
+</ul>
+</section>
+<section id="common-gotchas" class="slide level1">
+<h1>Common gotchas</h1>
+<ul>
+<li class="fragment">Operator precedence</li>
+<li class="fragment">Division by zero</li>
+<li class="fragment">Shifting by more bits than the type</li>
+<li class="fragment">Language automatically converting things to float</li>
+</ul>
+</section>
+<section id="representability" class="slide level1">
+<h1>Representability</h1>
+<ul>
+<li class="fragment">We can clearly represent any music as a function: just index into a big array</li>
+<li class="fragment">So in some sense what characterizes bytebeat is very high computational compressibility</li>
+</ul>
+</section>
+<section id="section-4" class="slide level1">
+<h1><img data-src="kol.png" /></h1>
+</section>
+<section id="catchiness" class="slide level1">
+<h1>Catchiness</h1>
+<ul>
+<li class="fragment">One factor of how catchy music is is how easily the brain is able to learn and represent it</li>
+<li class="fragment">Bytebeats are represented by very simple formulas</li>
+<li class="fragment">Therefore bytebeats are catchy music</li>
+<li class="fragment">Good music is catchy</li>
+<li class="fragment">And also all good music is bytebeat</li>
+</ul>
+</section>
+<section id="overzealous-generalization" class="slide level1">
+<h1>Overzealous generalization</h1>
+<ul>
+<li class="fragment">Everything that people like is highly computationally compressible</li>
+<li class="fragment">There are small math formulas for all interesting art</li>
+</ul>
+</section>
+<section id="resources" class="slide level1">
+<h1>Resources</h1>
+<ul>
+<li class="fragment"><a href="https://www.pouet.net/topic.php?which=8357&amp;page=1">The original pouet thread</a></li>
+<li class="fragment"><a href="https://greggman.com/downloads/examples/html5bytebeat">html5bytebeat</a></li>
+<li class="fragment"><a href="http://pelulamu.net/ibniz/">IBNIZ</a></li>
+<li class="fragment"><a href="https://github.com/kragen/ar_bytebeat">bytebeat in hardware</a></li>
+<li class="fragment"><a href="https://github.com/erlehmann/libglitch">libglitch</a></li>
+<li class="fragment"><a href="http://viznut.fi/texts-en/bytebeat_exploring_space.pdf">bytebeat papers</a></li>
+<li class="fragment"><a href="https://github.com/nwoeanhinnogaehr/tinyspec">tinyspec</a></li>
+<li class="fragment"><a href="http://wavepot.com/">wavepot</a></li>
+<li class="fragment"><a href="https://github.com/kragen/pytebeat">pytebeat</a></li>
+<li class="fragment"><a href="http://battleofthebits.org/lyceum/View/bytebeat+%28format%29">battle of the bits</a></li>
+</ul>
+</section>
+<section id="slide-repo" class="slide level1">
+<h1>Slide repo</h1>
+<p><img data-src="frame.png" /></p>
+</section>
+<section id="extras" class="slide level1">
+<h1>Extras</h1>
+<p>https://greggman.com/downloads/examples/html5bytebeat/html5bytebeat.html#t=0&amp;e=0&amp;s=32000&amp;bb=5d000001001b0000000000000000141d01f00425d021087b406c8fc1583215ef67aaf4dbfb98cf515fff390c0000 https://greggman.com/downloads/examples/html5bytebeat/html5bytebeat.html#t=0&amp;e=0&amp;s=44100&amp;bb=5d000001001e00000000000000001461cc5e31197925169763d83a2fc92836b2f4fbee7b3baf844f91a0b3fffff93e0000</p>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/math/math.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
